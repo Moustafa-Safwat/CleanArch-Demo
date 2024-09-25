@@ -4,16 +4,17 @@ using System.Reflection;
 
 namespace CleanArchDemo.Infra.Data.University.Context
 {
-    public class UniversityDbContext : DbContext
+    public class UniversityDbContext(DbContextOptions<UniversityDbContext> options) : DbContext(options)
     {
         public DbSet<Course> Courses => Set<Course>();
         public DbSet<Student> Students => Set<Student>();
         public DbSet<Instructor> Instructors => Set<Instructor>();
         public DbSet<Department> Departments => Set<Department>();
 
-        public UniversityDbContext(DbContextOptions options) : base(options)
-        {
+        // Replace this code by [Primary Constructor]
+        //public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options)
+        //{
 
-        }
+        //}
     }
 }

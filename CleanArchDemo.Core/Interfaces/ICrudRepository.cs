@@ -27,7 +27,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the entity with the specified ID, or null if not found.</returns>
-        Task<T> GetByIdAsync(int id);
+        Task<T?> GetByIdAsync(int id);
 
         /// <summary>
         /// Gets a paged list of entities asynchronously.
@@ -44,10 +44,5 @@ namespace CleanArchDemo.Core.Interfaces
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
         Task<bool> DeleteAsync(int id);
 
-        /// <summary>
-        /// Saves changes made to the repository asynchronously.
-        /// </summary>
-        /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the changes were saved successfully.</returns>
-        Task<bool> SaveChangesAsync();
     }
 }
