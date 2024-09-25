@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchDemo.Core.Entities;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CleanArchDemo.Infra.Data.University.Context
 {
-    internal class UniversityDbContext
+    public class UniversityDbContext : DbContext
     {
+        public DbSet<Course> Courses => Set<Course>();
+        public DbSet<Student> Students => Set<Student>();
+        public DbSet<Instructor> Instructors => Set<Instructor>();
+        public DbSet<Department> Departments => Set<Department>();
+
+        public UniversityDbContext(DbContextOptions options) : base(options)
+        {
+
+        }
     }
 }

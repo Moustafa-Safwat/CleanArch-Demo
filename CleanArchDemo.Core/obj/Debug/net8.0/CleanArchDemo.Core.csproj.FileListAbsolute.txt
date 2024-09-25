@@ -1,0 +1,12 @@
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\bin\Debug\net8.0\CleanArchDemo.Core.deps.json
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\bin\Debug\net8.0\CleanArchDemo.Core.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\bin\Debug\net8.0\CleanArchDemo.Core.pdb
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.AssemblyInfoInputs.cache
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.AssemblyInfo.cs
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.csproj.CoreCompileInputs.cache
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.sourcelink.json
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\refint\CleanArchDemo.Core.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\CleanArchDemo.Core.pdb
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Core\obj\Debug\net8.0\ref\CleanArchDemo.Core.dll

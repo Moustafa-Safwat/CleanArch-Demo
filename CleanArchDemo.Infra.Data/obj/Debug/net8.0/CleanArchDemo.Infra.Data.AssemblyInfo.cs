@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanArchDemo.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62bd88842aacc0a5df22b15741c04c4ed41be3b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94dd31ddf6b83a7173aa8bc92160bbc6168d579c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanArchDemo.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanArchDemo.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
