@@ -38,6 +38,12 @@ namespace CleanArchDemo.Core.Interfaces
         IQueryable<T> GetPaged(int pageNumber, int pageSize);
 
         /// <summary>
+        /// Gets all entities.
+        /// </summary>
+        /// <returns>A queryable collection of all entities.</returns>
+        IQueryable<T> GetAll();
+
+        /// <summary>
         /// Deletes an entity by its ID asynchronously.
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>

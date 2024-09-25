@@ -137,3 +137,6 @@ D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architect
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Infra.Ioc.dll
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Infra.Ioc.pdb
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\AutoMapper.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Application.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Application.pdb

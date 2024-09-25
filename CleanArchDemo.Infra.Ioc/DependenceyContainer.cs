@@ -1,4 +1,6 @@
-﻿using CleanArchDemo.Core.Entities;
+﻿using CleanArchDemo.Application.Interfaces;
+using CleanArchDemo.Application.Services;
+using CleanArchDemo.Core.Entities;
 using CleanArchDemo.Core.Interfaces;
 using CleanArchDemo.Infra.Data.University.Repository;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,8 @@ namespace CleanArchDemo.Infra.Ioc
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             services.AddScoped(typeof(ICrudRepository<Course>), typeof(CurdRepository<Course>));
+            services.AddScoped(typeof(ICrudRepository<Student>), typeof(CurdRepository<Student>));
+            services.AddScoped<ICourseService, CourseService>();
             return services;
         }
     }

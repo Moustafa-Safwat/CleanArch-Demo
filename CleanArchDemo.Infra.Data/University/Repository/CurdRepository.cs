@@ -37,6 +37,15 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         }
 
         /// <summary>
+        /// Gets all entities of type T.
+        /// </summary>
+        /// <returns>A queryable collection of entities.</returns>
+        public IQueryable<T> GetAll()
+        {
+            return context.Set<T>();
+        }
+
+        /// <summary>
         /// Gets an entity by its ID asynchronously.
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>

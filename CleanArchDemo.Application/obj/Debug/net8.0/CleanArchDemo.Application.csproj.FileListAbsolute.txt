@@ -10,3 +10,7 @@ D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architect
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\obj\Debug\net8.0\refint\CleanArchDemo.Application.dll
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\obj\Debug\net8.0\CleanArchDemo.Application.pdb
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\obj\Debug\net8.0\ref\CleanArchDemo.Application.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\bin\Debug\net8.0\CleanArchDemo.Core.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\bin\Debug\net8.0\CleanArchDemo.Core.pdb
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\obj\Debug\net8.0\CleanArchDemo.Application.csproj.AssemblyReference.cache
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Application\obj\Debug\net8.0\CleanArc.9CCB43F7.Up2Date
