@@ -134,3 +134,6 @@ D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architect
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\obj\Debug\net8.0\CleanArchDemo.Api.pdb
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\obj\Debug\net8.0\CleanArchDemo.Api.genruntimeconfig.cache
 D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\obj\Debug\net8.0\ref\CleanArchDemo.Api.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Infra.Ioc.dll
+D:\ITI\BackEnd\Clean Architecture\Getting Started with .NET Core Clean Architecture -Manish Narayan\Practise-Project\CleanArch-Demo\CleanArchDemo.Api\bin\Debug\net8.0\CleanArchDemo.Infra.Ioc.pdb

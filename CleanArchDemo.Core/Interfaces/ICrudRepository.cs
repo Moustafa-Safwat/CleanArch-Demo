@@ -30,12 +30,12 @@ namespace CleanArchDemo.Core.Interfaces
         Task<T?> GetByIdAsync(int id);
 
         /// <summary>
-        /// Gets a paged list of entities asynchronously.
+        /// Gets a paged list of entities.
         /// </summary>
         /// <param name="pageNumber">The page number.</param>
         /// <param name="pageSize">The page size.</param>
         /// <returns>A queryable collection of entities representing the specified page.</returns>
-        IQueryable<T> GetPagedAsync(int pageNumber, int pageSize);
+        IQueryable<T> GetPaged(int pageNumber, int pageSize);
 
         /// <summary>
         /// Deletes an entity by its ID asynchronously.

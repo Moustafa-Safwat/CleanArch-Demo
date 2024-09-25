@@ -53,7 +53,7 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// <param name="pageNumber">The page number.</param>
         /// <param name="pageSize">The page size.</param>
         /// <returns>A queryable collection of entities representing the specified page.</returns>
-        public IQueryable<T> GetPagedAsync(int pageNumber, int pageSize)
+        public IQueryable<T> GetPaged(int pageNumber, int pageSize)
         {
             return context.Set<T>()
                 .Skip((pageNumber - 1) * pageSize)
