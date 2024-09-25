@@ -13,9 +13,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-cutting", "Cross-cutt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{86E8D430-AFE1-4DF2-A69E-B33AC93590FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchDemo.Core", "CleanArchDemo.Core\CleanArchDemo.Core.csproj", "{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0} = {E76F4641-3E15-4794-8461-59D6AD9CBEC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C2E24B3E-5468-4CCD-9681-48410D367AC3}
