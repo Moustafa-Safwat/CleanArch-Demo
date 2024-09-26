@@ -16,10 +16,15 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="entity">The entity to add.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
-        public async Task<bool> AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
             await context.Set<T>().AddAsync(entity);
-            return await context.SaveChangesAsync() > 0;
+            bool isExecuted = await context.SaveChangesAsync() > 0;
+            if (isExecuted)
+            {
+                return entity.Id;
+            }
+            return -1;
         }
 
         /// <summary>

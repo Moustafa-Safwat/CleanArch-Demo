@@ -12,14 +12,16 @@ namespace CleanArchDemo.Application.Services
     /// </summary>
     /// <typeparam name="TDto">The type of entity.</typeparam>
     public class CurdService<TDto, TEntity>(ICrudRepository<TEntity> repository)
-        : ICurdService<TDto> where TDto : BaseDto, new() where TEntity : BaseEntity, new()
+        : ICurdService<TDto>
+        where TDto : BaseDto, new()
+        where TEntity : BaseEntity, new()
     {
         /// <summary>
         /// Adds a new entity asynchronously.
         /// </summary>
         /// <param name="dto">The entity to add.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
-        public async Task<bool> AddAsync(TDto dto)
+        public async Task<int> AddAsync(TDto dto)
         {
             var mappedEntity = dto.MapObjects<TDto, TEntity>();
             return await repository.AddAsync(mappedEntity);

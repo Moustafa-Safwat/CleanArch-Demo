@@ -13,7 +13,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="entity">The entity to add.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
-        Task<bool> AddAsync(T entity);
+        Task<int> AddAsync(T entity);
 
         /// <summary>
         /// Updates an existing entity asynchronously.
