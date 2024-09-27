@@ -50,14 +50,19 @@ namespace CleanArchDemo.Api.Controllers
             return BadRequest();
         }
 
-        // UPDATE : api/course
+        // UPDATE : api/course/{id}
         [HttpPut]
-        public async Task<ActionResult> Update(CourseDto courseDto)
+        [Route("{id}")]
+        public async Task<ActionResult> Update(int id, CourseDto courseDto)
         {
+            if (id != courseDto.Id)
+            {
+                return BadRequest("ID mismatch.");
+            }
             var result = await courseService.UpdateAsync(courseDto);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
             return BadRequest(result.Message);
         }

@@ -74,15 +74,23 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         public async Task<(bool Success, string Message)> UpdateAsync(T entity)
         {
             context.Set<T>().Update(entity);
+            int effectedRows = 0;
             try
             {
-                await context.SaveChangesAsync();
+                effectedRows = await context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException ex)
+            catch (DbUpdateConcurrencyException)
             {
-                return (false, ex.Message);
+                bool entityExists = context.Set<T>().Any(e => e.Id == entity.Id);
+                if (!entityExists)
+                {
+                    return (false, "The record you are trying to update does not exist.");
+                }
+                return (false, "The record has been modified by another process. Please reload the data and try again.");
             }
-            return (true, "Updated Successfully");
+            return effectedRows > 0 ?
+                (true, "Updated Successfully") :
+                (false, "Failed to Update, No changes were made.");
         }
     }
 }
