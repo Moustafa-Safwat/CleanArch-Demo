@@ -32,7 +32,7 @@ namespace CleanArchDemo.Application.Services
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<(bool Success, string Message)> DeleteAsync(int id)
         {
             return await repository.DeleteAsync(id);
         }

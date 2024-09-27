@@ -2,6 +2,7 @@
 using CleanArchDemo.Core.Interfaces;
 using CleanArchDemo.Infra.Data.University.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace CleanArchDemo.Infra.Data.University.Repository
 {
@@ -9,7 +10,7 @@ namespace CleanArchDemo.Infra.Data.University.Repository
     /// Represents a generic repository for CRUD operations.
     /// </summary>
     /// <typeparam name="T">The type of entity.</typeparam>
-    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity, new()
+    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity
     {
         protected readonly UniversityDbContext context = context;
 
@@ -21,12 +22,8 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         public async Task<int> AddAsync(T entity)
         {
             await context.Set<T>().AddAsync(entity);
-            bool isExecuted = await context.SaveChangesAsync() > 0;
-            if (isExecuted)
-            {
-                return entity.Id;
-            }
-            return -1;
+            return await context.SaveChangesAsync() > 0 ?
+                entity.Id : -1;
         }
 
         /// <summary>
@@ -34,11 +31,24 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<(bool Success, string Message)> DeleteAsync(int id)
         {
-            var entity = new T { Id = id };
-            context.Entry(entity).State = EntityState.Deleted;
-            return await context.SaveChangesAsync() > 0;
+            try
+            {
+                var entity = await context.Set<T>().FindAsync(id);
+                if (entity == null)
+                {
+                    return (false, "The record you are trying to delete does not exist.");
+                }
+                context.Set<T>().Remove(entity);
+                return await context.SaveChangesAsync() > 0 ?
+                    (true, "Deleted Successfully") :
+                    (false, "Failed to Delete, No changes were made.");
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return (false, "The record has been modified by another process. Please reload the data and try again.");
+            }
         }
 
         /// <summary>
@@ -49,8 +59,7 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         public IQueryable<T> GetByIdAsync(int id)
         {
             return context.Set<T>()
-                .Where(entity => entity.Id == id)
-                .AsQueryable();
+                .Where(entity => entity.Id == id);
         }
 
         /// <summary>
@@ -70,14 +79,22 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// Updates an existing entity asynchronously.
         /// </summary>
         /// <param name="entity">The entity to update.</param>
-        /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was updated successfully.</returns>
+        /// <returns>
+        /// A task representing the asynchronous operation. The task result contains a tuple with a boolean value indicating whether the entity was updated successfully and a message.
+        /// The message indicates the result of the update operation:
+        /// - "Updated Successfully" if the update was successful.
+        /// - "Failed to Update, No changes were made." if no changes were made.
+        /// - "The record you are trying to update does not exist." if the entity does not exist.
+        /// - "The record has been modified by another process. Please reload the data and try again." if a concurrency conflict occurred.
+        /// </returns>
         public async Task<(bool Success, string Message)> UpdateAsync(T entity)
         {
             context.Set<T>().Update(entity);
-            int effectedRows = 0;
             try
             {
-                effectedRows = await context.SaveChangesAsync();
+                return await context.SaveChangesAsync() > 0 ?
+                    (true, "Updated Successfully") :
+                    (false, "Failed to Update, No changes were made.");
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -88,9 +105,7 @@ namespace CleanArchDemo.Infra.Data.University.Repository
                 }
                 return (false, "The record has been modified by another process. Please reload the data and try again.");
             }
-            return effectedRows > 0 ?
-                (true, "Updated Successfully") :
-                (false, "Failed to Update, No changes were made.");
+
         }
     }
 }

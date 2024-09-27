@@ -67,6 +67,19 @@ namespace CleanArchDemo.Api.Controllers
             return BadRequest(result.Message);
         }
 
+        // DELETE : api/course/{id}
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var result = await courseService.DeleteAsync(id);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+        }
+
         // GET : api/course/{courseId}/students
         [HttpGet("{courseId}/students")]
         public ActionResult<List<HumanDto>> GetStudentsFromCourse(int courseId)
