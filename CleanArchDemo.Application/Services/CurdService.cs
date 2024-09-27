@@ -67,7 +67,7 @@ namespace CleanArchDemo.Application.Services
         /// </summary>
         /// <param name="entity">The entity to update.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was updated successfully.</returns>
-        public async Task<bool> UpdateAsync(TDto entity)
+        public async Task<(bool Success, string Message)> UpdateAsync(TDto entity)
         {
             var mappedEntity = entity.MapObjects<TDto, TEntity>();
             return await repository.UpdateAsync(mappedEntity);

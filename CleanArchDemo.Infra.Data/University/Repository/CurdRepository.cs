@@ -9,7 +9,7 @@ namespace CleanArchDemo.Infra.Data.University.Repository
     /// Represents a generic repository for CRUD operations.
     /// </summary>
     /// <typeparam name="T">The type of entity.</typeparam>
-    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity,new()
+    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity, new()
     {
         protected readonly UniversityDbContext context = context;
 
@@ -71,10 +71,18 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="entity">The entity to update.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was updated successfully.</returns>
-        public async Task<bool> UpdateAsync(T entity)
+        public async Task<(bool Success, string Message)> UpdateAsync(T entity)
         {
             context.Set<T>().Update(entity);
-            return await context.SaveChangesAsync() > 0;
+            try
+            {
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                return (false, ex.Message);
+            }
+            return (true, "Updated Successfully");
         }
     }
 }

@@ -8,11 +8,20 @@ namespace CleanArchDemo.Api.Controllers
     [ApiController]
     public class CourseController(ICourseService courseService) : ControllerBase
     {
-        // GET : api/course
+        // GET : api/course?pageNumber=1&pageSize=10
         [HttpGet]
-        public ActionResult<List<CourseDto>> GetCources()
+        public ActionResult<List<CourseDto>> GetCourses(int pageNumber, int pageSize)
         {
-            return courseService.GetPaged(1, 10).ToList();
+            if (pageNumber <= 0 || pageSize <= 0)
+            {
+                return BadRequest("Page number and page size must be greater than zero.");
+            }
+            var courses = courseService.GetPaged(pageNumber, pageSize);
+            if (!courses.Any())
+            {
+                return NotFound("No courses found.");
+            }
+            return courses.ToList();
         }
 
         // GET : api/course/{id}
@@ -39,6 +48,18 @@ namespace CleanArchDemo.Api.Controllers
                     new { Message = "Created successfully" });
             }
             return BadRequest();
+        }
+
+        // UPDATE : api/course
+        [HttpPut]
+        public async Task<ActionResult> Update(CourseDto courseDto)
+        {
+            var result = await courseService.UpdateAsync(courseDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
         }
 
         // GET : api/course/{courseId}/students

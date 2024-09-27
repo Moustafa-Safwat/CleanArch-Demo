@@ -20,7 +20,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="entity">The entity to update.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was updated successfully.</returns>
-        Task<bool> UpdateAsync(T entity);
+        Task<(bool Success,string Message)> UpdateAsync(T entity);
 
         /// <summary>
         /// Gets an entity by its ID asynchronously.

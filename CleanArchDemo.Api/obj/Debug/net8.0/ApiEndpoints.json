@@ -1,12 +1,23 @@
 [
   {
     "ContainingType": "CleanArchDemo.Api.Controllers.CourseController",
-    "Method": "GetCources",
+    "Method": "GetCourses",
     "RelativePath": "api/Course",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[CleanArchDemo.Application.Dtos.CourseDto, CleanArchDemo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -24,6 +35,22 @@
     "Method": "Add",
     "RelativePath": "api/Course",
     "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseDto",
+        "Type": "CleanArchDemo.Application.Dtos.CourseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CleanArchDemo.Api.Controllers.CourseController",
+    "Method": "Update",
+    "RelativePath": "api/Course",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [

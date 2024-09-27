@@ -5,7 +5,7 @@ namespace CleanArchDemo.Application.Interfaces
     public interface ICurdService<T> 
     {
         Task<int> AddAsync(T entity);
-        Task<bool> UpdateAsync(T entity);
+        Task<(bool Success, string Message)> UpdateAsync(T entity);
         Task<T?> GetByIdAsync(int id);
         IQueryable<T> GetPaged(int pageNumber, int pageSize);
         Task<bool> DeleteAsync(int id);
