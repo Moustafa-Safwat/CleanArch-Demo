@@ -11,12 +11,6 @@ namespace CleanArchDemo.Infra.Data.University.Context
         public DbSet<Instructor> Instructors => Set<Instructor>();
         public DbSet<Department> Departments => Set<Department>();
 
-        // Replace this code by [Primary Constructor]
-        //public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options)
-        //{
-
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -52,6 +46,51 @@ namespace CleanArchDemo.Infra.Data.University.Context
                 new Instructor { Id = 4, FirstName = "Diana", LastName = "Garcia", Email = "diana.garcia@example.com", PhoneNumber = "0001112222", DateOfBirth = new DateTime(1990, 6, 6), DepartmentId = 1 },
                 new Instructor { Id = 5, FirstName = "Edward", LastName = "Martinez", Email = "edward.martinez@example.com", PhoneNumber = "3334445555", DateOfBirth = new DateTime(1982, 7, 7), DepartmentId = 2 }
             );
+
+            // Configure many-to-many relationships
+            modelBuilder.Entity<Student>()
+                .HasMany(s => s.EnrolledCourses)
+                .WithMany(c => c.Students)
+                .UsingEntity<Dictionary<string, object>>(
+                    "CourseStudent",
+                    j => j.HasOne<Course>().WithMany().HasForeignKey("CourseId"),
+                    j => j.HasOne<Student>().WithMany().HasForeignKey("StudentId"),
+                    j =>
+                    {
+                        j.HasKey("StudentId", "CourseId");
+                        j.HasData(
+                            new { StudentId = 1, CourseId = 1 },
+                            new { StudentId = 1, CourseId = 2 },
+                            new { StudentId = 2, CourseId = 3 },
+                            new { StudentId = 2, CourseId = 4 },
+                            new { StudentId = 3, CourseId = 5 },
+                            new { StudentId = 3, CourseId = 6 },
+                            new { StudentId = 4, CourseId = 1 },
+                            new { StudentId = 5, CourseId = 3 }
+                        );
+                    });
+
+            modelBuilder.Entity<Instructor>()
+                .HasMany(i => i.Courses)
+                .WithMany(c => c.Instructors)
+                .UsingEntity<Dictionary<string, object>>(
+                    "CourseInstructor",
+                    j => j.HasOne<Course>().WithMany().HasForeignKey("CourseId"),
+                    j => j.HasOne<Instructor>().WithMany().HasForeignKey("InstructorId"),
+                    j =>
+                    {
+                        j.HasKey("InstructorId", "CourseId");
+                        j.HasData(
+                            new { InstructorId = 1, CourseId = 1 },
+                            new { InstructorId = 1, CourseId = 2 },
+                            new { InstructorId = 2, CourseId = 3 },
+                            new { InstructorId = 2, CourseId = 4 },
+                            new { InstructorId = 3, CourseId = 5 },
+                            new { InstructorId = 3, CourseId = 6 },
+                            new { InstructorId = 4, CourseId = 1 },
+                            new { InstructorId = 5, CourseId = 3 }
+                        );
+                    });
         }
     }
 }

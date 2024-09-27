@@ -4,7 +4,9 @@ namespace CleanArchDemo.Application.Mapping
 {
     public static class ObjectMapper
     {
-        public static TDest MapObjects<TSrc, TDest>(this TSrc source) where TSrc : class where TDest : class, new()
+        public static TDest MapObjects<TSrc, TDest>(this TSrc source)
+            where TSrc : class
+            where TDest : class, new()
         {
             var destObject = new TDest();
 
@@ -16,7 +18,9 @@ namespace CleanArchDemo.Application.Mapping
 
             foreach (PropertyInfo srcProperty in srcProperties)
             {
-                PropertyInfo destProperty = destProperties.FirstOrDefault(p => p.Name == srcProperty.Name && p.PropertyType == srcProperty.PropertyType)!;
+                PropertyInfo destProperty = destProperties
+                    .FirstOrDefault(p => p.Name == srcProperty.Name
+                    && p.PropertyType == srcProperty.PropertyType)!;
 
                 if (destProperty != null)
                 {

@@ -20,7 +20,7 @@ namespace CleanArchDemo.Infra.Ioc
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             services.AddScoped(typeof(ICrudRepository<Course>), typeof(CurdRepository<Course>));
-            services.AddScoped(typeof(ICrudRepository<Student>), typeof(CurdRepository<Student>));
+            services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ICourseService, CourseService>();
             return services;
         }

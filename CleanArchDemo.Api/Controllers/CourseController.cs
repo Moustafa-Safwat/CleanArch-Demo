@@ -8,12 +8,14 @@ namespace CleanArchDemo.Api.Controllers
     [ApiController]
     public class CourseController(ICourseService courseService) : ControllerBase
     {
+        // GET : api/course
         [HttpGet]
         public ActionResult<List<CourseDto>> GetCources()
         {
             return courseService.GetPaged(1, 10).ToList();
         }
 
+        // GET : api/course/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<CourseDto>> GetCourseById(int id)
         {
@@ -25,6 +27,7 @@ namespace CleanArchDemo.Api.Controllers
             return course;
         }
 
+        // POST : api/course
         [HttpPost]
         public async Task<ActionResult> Add(CourseDto courseDto)
         {
@@ -38,15 +41,17 @@ namespace CleanArchDemo.Api.Controllers
             return BadRequest();
         }
 
+        // GET : api/course/{courseId}/students
         [HttpGet("{courseId}/students")]
         public ActionResult<List<HumanDto>> GetStudentsFromCourse(int courseId)
         {
-            var students = courseService.GetStudentFromCourseId(courseId).ToList();
-            if (students.Count == 0)
+            var students = courseService.GetStudentFromCourseId(courseId);
+            if (!students.Any())
             {
                 return NotFound();
             }
-            return students;
+            return students.ToList();
         }
+
     }
 }

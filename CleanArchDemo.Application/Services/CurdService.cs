@@ -42,10 +42,12 @@ namespace CleanArchDemo.Application.Services
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the entity with the specified ID, or null if not found.</returns>
-        public async Task<TDto?> GetByIdAsync(int id)
+        public Task<TDto?> GetByIdAsync(int id)
         {
-            var entity = await repository.GetByIdAsync(id);
-            return entity?.MapObjects<TEntity, TDto>();
+            // it's better to sue IQurable as return and use projectto method from the automapper to implement the deffer execuation
+            var query = repository.GetByIdAsync(id);
+            var entity = query.FirstOrDefault();
+            return Task.FromResult(entity?.MapObjects<TEntity, TDto>());
         }
 
         /// <summary>

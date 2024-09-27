@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchDemo.Infra.Data.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    [Migration("20240925225211_SeedDb")]
+    [Migration("20240926223025_SeedDb")]
     partial class SeedDb
     {
         /// <inheritdoc />
@@ -342,32 +342,116 @@ namespace CleanArchDemo.Infra.Data.Migrations
 
             modelBuilder.Entity("CourseInstructor", b =>
                 {
-                    b.Property<int>("CoursesId")
+                    b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("InstructorsId")
+                    b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.HasKey("CoursesId", "InstructorsId");
+                    b.HasKey("InstructorId", "CourseId");
 
-                    b.HasIndex("InstructorsId");
+                    b.HasIndex("CourseId");
 
                     b.ToTable("CourseInstructor");
+
+                    b.HasData(
+                        new
+                        {
+                            InstructorId = 1,
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            InstructorId = 1,
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            InstructorId = 2,
+                            CourseId = 3
+                        },
+                        new
+                        {
+                            InstructorId = 2,
+                            CourseId = 4
+                        },
+                        new
+                        {
+                            InstructorId = 3,
+                            CourseId = 5
+                        },
+                        new
+                        {
+                            InstructorId = 3,
+                            CourseId = 6
+                        },
+                        new
+                        {
+                            InstructorId = 4,
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            InstructorId = 5,
+                            CourseId = 3
+                        });
                 });
 
             modelBuilder.Entity("CourseStudent", b =>
                 {
-                    b.Property<int>("EnrolledCoursesId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StudentsId")
+                    b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.HasKey("EnrolledCoursesId", "StudentsId");
+                    b.HasKey("StudentId", "CourseId");
 
-                    b.HasIndex("StudentsId");
+                    b.HasIndex("CourseId");
 
                     b.ToTable("CourseStudent");
+
+                    b.HasData(
+                        new
+                        {
+                            StudentId = 1,
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentId = 1,
+                            CourseId = 2
+                        },
+                        new
+                        {
+                            StudentId = 2,
+                            CourseId = 3
+                        },
+                        new
+                        {
+                            StudentId = 2,
+                            CourseId = 4
+                        },
+                        new
+                        {
+                            StudentId = 3,
+                            CourseId = 5
+                        },
+                        new
+                        {
+                            StudentId = 3,
+                            CourseId = 6
+                        },
+                        new
+                        {
+                            StudentId = 4,
+                            CourseId = 1
+                        },
+                        new
+                        {
+                            StudentId = 5,
+                            CourseId = 3
+                        });
                 });
 
             modelBuilder.Entity("CleanArchDemo.Core.Entities.Course", b =>
@@ -407,13 +491,13 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 {
                     b.HasOne("CleanArchDemo.Core.Entities.Course", null)
                         .WithMany()
-                        .HasForeignKey("CoursesId")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CleanArchDemo.Core.Entities.Instructor", null)
                         .WithMany()
-                        .HasForeignKey("InstructorsId")
+                        .HasForeignKey("InstructorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -422,13 +506,13 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 {
                     b.HasOne("CleanArchDemo.Core.Entities.Course", null)
                         .WithMany()
-                        .HasForeignKey("EnrolledCoursesId")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CleanArchDemo.Core.Entities.Student", null)
                         .WithMany()
-                        .HasForeignKey("StudentsId")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

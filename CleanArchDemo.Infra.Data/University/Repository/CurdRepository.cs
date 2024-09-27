@@ -9,8 +9,10 @@ namespace CleanArchDemo.Infra.Data.University.Repository
     /// Represents a generic repository for CRUD operations.
     /// </summary>
     /// <typeparam name="T">The type of entity.</typeparam>
-    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity
+    public class CurdRepository<T>(UniversityDbContext context) : ICrudRepository<T> where T : BaseEntity,new()
     {
+        protected readonly UniversityDbContext context = context;
+
         /// <summary>
         /// Adds a new entity asynchronously.
         /// </summary>
@@ -34,31 +36,21 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
         public async Task<bool> DeleteAsync(int id)
         {
-            var entity = await GetByIdAsync(id);
-            if (entity is null) return false;
-
-            context.Set<T>().Remove(entity);
+            var entity = new T { Id = id };
+            context.Entry(entity).State = EntityState.Deleted;
             return await context.SaveChangesAsync() > 0;
-        }
-
-        /// <summary>
-        /// Gets all entities of type T.
-        /// </summary>
-        /// <returns>A queryable collection of entities.</returns>
-        public IQueryable<T> GetAll()
-        {
-            return context.Set<T>();
         }
 
         /// <summary>
         /// Gets an entity by its ID asynchronously.
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
-        /// <returns>A task representing the asynchronous operation. The task result contains the entity with the specified ID, or null if not found.</returns>
-        public async Task<T?> GetByIdAsync(int id)
+        /// <returns>A queryable collection of entities representing the specified ID.</returns>
+        public IQueryable<T> GetByIdAsync(int id)
         {
-            return await context.Set<T>()
-                .FirstOrDefaultAsync(entity => entity.Id == id);
+            return context.Set<T>()
+                .Where(entity => entity.Id == id)
+                .AsQueryable();
         }
 
         /// <summary>

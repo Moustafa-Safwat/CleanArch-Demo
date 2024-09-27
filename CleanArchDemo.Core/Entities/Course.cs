@@ -7,8 +7,8 @@
         public int Credits { get; set; } // e.g., 3
         public string Description { get; set; } = string.Empty;
         public int DepartmentId { get; set; } // Foreign key to Department
-        public Department Department { get; set; } // Navigation property
-        public ICollection<Instructor> Instructors { get; set; } = new List<Instructor>(); // List of instructors
-        public ICollection<Student> Students { get; set; }
+        public Department Department { get; set; } = null!; // Navigation property
+        public ICollection<Instructor> Instructors { get; set; } = []; // List of instructors
+        public ICollection<Student> Students { get; set; } = [];
     }
 }
