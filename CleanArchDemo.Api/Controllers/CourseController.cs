@@ -1,5 +1,6 @@
 ﻿using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
+using CleanArchDemo.Core.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchDemo.Api.Controllers
@@ -26,14 +27,15 @@ namespace CleanArchDemo.Api.Controllers
 
         // GET : api/course/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<CourseDto>> GetCourseById(int id)
+        public async Task<ActionResult> GetCourseById(int id)
         {
-            var course = await courseService.GetByIdAsync(id);
-            if (course is null)
+            ResultT<CourseDto> response = await courseService.GetByIdAsync(id);
+            if (response.IsFailure)
             {
-                return NotFound();
+                return NotFound(new Error("Course.NotFound",
+                    $"Course with Id [{id}], is not found in the database"));
             }
-            return course;
+            return Ok(response.Value);
         }
 
         // POST : api/course
