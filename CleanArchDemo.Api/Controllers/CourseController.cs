@@ -59,12 +59,12 @@ namespace CleanArchDemo.Api.Controllers
             {
                 return BadRequest("ID mismatch.");
             }
-            var result = await courseService.UpdateAsync(courseDto);
-            if (result.Success)
+            var (Success, Message) = await courseService.UpdateAsync(courseDto);
+            if (Success)
             {
-                return Ok(result.Message);
+                return Ok(Message);
             }
-            return BadRequest(result.Message);
+            return BadRequest(Message);
         }
 
         // DELETE : api/course/{id}
@@ -72,12 +72,12 @@ namespace CleanArchDemo.Api.Controllers
         [Route("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var result = await courseService.DeleteAsync(id);
-            if (result.Success)
+            var (Success, Message) = await courseService.DeleteAsync(id);
+            if (Success)
             {
-                return Ok(result.Message);
+                return Ok(Message);
             }
-            return BadRequest(result.Message);
+            return BadRequest(Message);
         }
 
         // GET : api/course/{courseId}/students

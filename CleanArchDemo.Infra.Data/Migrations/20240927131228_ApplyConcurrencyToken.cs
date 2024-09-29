@@ -16,7 +16,7 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 type: "rowversion",
                 rowVersion: true,
                 nullable: false,
-                defaultValue: new byte[0]);
+                defaultValue: new byte[1]);
 
             migrationBuilder.AddColumn<byte[]>(
                 name: "RowVersion",
@@ -24,7 +24,7 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 type: "rowversion",
                 rowVersion: true,
                 nullable: false,
-                defaultValue: new byte[0]);
+                defaultValue: new byte[1]);
 
             migrationBuilder.AddColumn<byte[]>(
                 name: "RowVersion",
@@ -32,7 +32,7 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 type: "rowversion",
                 rowVersion: true,
                 nullable: false,
-                defaultValue: new byte[0]);
+                defaultValue: new byte[1]);
 
             migrationBuilder.AddColumn<byte[]>(
                 name: "RowVersion",
@@ -40,7 +40,7 @@ namespace CleanArchDemo.Infra.Data.Migrations
                 type: "rowversion",
                 rowVersion: true,
                 nullable: false,
-                defaultValue: new byte[0]);
+                defaultValue: new byte[1]);
         }
 
         /// <inheritdoc />
