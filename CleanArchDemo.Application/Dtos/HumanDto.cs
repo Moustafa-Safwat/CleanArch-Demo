@@ -2,7 +2,7 @@
 
 namespace CleanArchDemo.Application.Dtos
 {
-    public class HumanDto : BaseDto
+    public record HumanDto : BaseDto
     {
         public string FirstName { get; set; } = string.Empty; // First name
         public string LastName { get; set; } = string.Empty; // Last name

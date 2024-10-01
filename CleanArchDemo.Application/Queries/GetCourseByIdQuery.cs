@@ -3,5 +3,5 @@ using CleanArchDemo.Application.Messaging;
 
 namespace CleanArchDemo.Application.Queries;
 
-public record GetCourseByIdQuery(
-    int Id) : ICommand<CourseDto>;
+public sealed record GetCourseByIdQuery(
+    int Id) : IQuery<CourseDto>;

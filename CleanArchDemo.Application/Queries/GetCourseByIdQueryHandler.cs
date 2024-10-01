@@ -5,7 +5,7 @@ using CleanArchDemo.Core.Shared;
 
 namespace CleanArchDemo.Application.Queries;
 
-public class GetCourseByIdQueryHandler(ICourseService courseService) : ICommandHandler<GetCourseByIdQuery, CourseDto>
+public class GetCourseByIdQueryHandler(ICourseService courseService) : IQueryHandler<GetCourseByIdQuery, CourseDto>
 {
     public async Task<Result<CourseDto>> Handle(GetCourseByIdQuery request, CancellationToken cancellationToken)
     {
