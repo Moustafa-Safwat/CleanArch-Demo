@@ -38,9 +38,9 @@ namespace CleanArchDemo.Api.Controllers
                 return NotFound(new Error("Course.NotFound",
                     $"Course with Id [{id}], is not found in the database"));
             }
-            return Ok(response.Value);
+            return Ok(response);
         }
-
+        
         // POST : api/course
         [HttpPost]
         public async Task<ActionResult> Add(CourseDto courseDto, CancellationToken cancellationToken)
