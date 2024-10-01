@@ -1,17 +1,20 @@
-﻿using CleanArchDemo.Application.Dtos;
+﻿using CleanArchDemo.Application.Commands.CourseCommand;
+using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
 using CleanArchDemo.Core.Shared;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace CleanArchDemo.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class CourseController(ICourseService courseService) : ControllerBase
+    public class CourseController(ISender sender, ICourseService courseService) : ApiController(sender)
     {
         // GET : api/course?pageNumber=1&pageSize=10
         [HttpGet]
-        public ActionResult<List<CourseDto>> GetCourses(int pageNumber, int pageSize)
+        public ActionResult GetCourses(int pageNumber, int pageSize)
         {
             if (pageNumber <= 0 || pageSize <= 0)
             {
@@ -22,14 +25,14 @@ namespace CleanArchDemo.Api.Controllers
             {
                 return NotFound("No courses found.");
             }
-            return courses.ToList();
+            return Ok(Result<IEnumerable<CourseDto>>.Create(courses));
         }
 
         // GET : api/course/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetCourseById(int id)
+        public async Task<ActionResult> GetCourseById(int id,CancellationToken cancellationToken)
         {
-            ResultT<CourseDto> response = await courseService.GetByIdAsync(id);
+            Result<CourseDto> response = await courseService.GetByIdAsync(id,cancellationToken);
             if (response.IsFailure)
             {
                 return NotFound(new Error("Course.NotFound",
@@ -40,16 +43,22 @@ namespace CleanArchDemo.Api.Controllers
 
         // POST : api/course
         [HttpPost]
-        public async Task<ActionResult> Add(CourseDto courseDto)
+        public async Task<ActionResult> Add(CourseDto courseDto, CancellationToken cancellationToken)
         {
-            var result = await courseService.AddAsync(courseDto);
-            if (result != -1)
+            var result = await Sender.Send(new CreateCourseCommand(
+                        courseDto.Name,
+                        courseDto.Code,
+                        courseDto.Credits,
+                        courseDto.Description,
+                        courseDto.DepartmentId), cancellationToken);
+            //var result = await courseService.AddAsync(courseDto);
+            if (result.IsSuccess)
             {
                 return CreatedAtAction(nameof(GetCourseById),
-                    new { Id = result },
-                    new { Message = "Created successfully" });
+                    new { Id = result.Value },
+                    result);
             }
-            return BadRequest();
+            return BadRequest(result.Error);
         }
 
         // UPDATE : api/course/{id}

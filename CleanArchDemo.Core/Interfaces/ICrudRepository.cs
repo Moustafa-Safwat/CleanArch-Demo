@@ -13,7 +13,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="entity">The entity to add.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
-        Task<int> AddAsync(T entity);
+        Task<int> AddAsync(T entity,CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates an existing entity asynchronously.
@@ -27,7 +27,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the entity with the specified ID, or null if not found.</returns>
-        IQueryable<T> GetByIdAsync(int id);
+        Task<T?> GetByIdAsync(int id, CancellationToken cancellationToken);
 
         /// <summary>
         /// Gets a paged list of entities.

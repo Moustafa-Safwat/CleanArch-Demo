@@ -15,6 +15,9 @@ builder.Services.AddDbContext<UniversityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityCS")); // the Coonection string is on User Secrets
 });
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(
+    CleanArchDemo.Application.AssemblyReference.Assembly));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

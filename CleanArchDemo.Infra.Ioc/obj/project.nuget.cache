@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "IwGlVEhdFU0=",
+  "dgSpecHash": "RIn9tdUMqvQ=",
   "success": true,
   "projectFilePath": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Ioc\\CleanArchDemo.Infra.Ioc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mostafa\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Mostafa\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Mostafa\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",

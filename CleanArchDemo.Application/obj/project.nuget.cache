@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "0NpR0UwI1Fc=",
+  "dgSpecHash": "5Wi3+E8Knak=",
   "success": true,
   "projectFilePath": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\CleanArchDemo.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mostafa\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
-    "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mostafa\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Mostafa\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Mostafa\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

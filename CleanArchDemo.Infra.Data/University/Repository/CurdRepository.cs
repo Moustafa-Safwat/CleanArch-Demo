@@ -19,10 +19,10 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="entity">The entity to add.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
-        public async Task<int> AddAsync(T entity)
+        public async Task<int> AddAsync(T entity, CancellationToken cancellationToken)
         {
-            await context.Set<T>().AddAsync(entity);
-            return await context.SaveChangesAsync() > 0 ?
+            await context.Set<T>().AddAsync(entity, cancellationToken);
+            return await context.SaveChangesAsync(cancellationToken) > 0 ?
                 entity.Id : -1;
         }
 
@@ -56,10 +56,9 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>A queryable collection of entities representing the specified ID.</returns>
-        public IQueryable<T> GetByIdAsync(int id)
+        public async Task<T?> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            return context.Set<T>()
-                .Where(entity => entity.Id == id);
+            return await context.Set<T>().FindAsync([id], cancellationToken);
         }
 
         /// <summary>
