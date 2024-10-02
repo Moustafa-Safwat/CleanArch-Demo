@@ -34,7 +34,7 @@ namespace CleanArchDemo.Api.Controllers
         public async Task<ActionResult> GetCourseById(int id, CancellationToken cancellationToken)
         {
             // Implement the CQRS in this end point
-            var result =await Sender.Send(new GetCourseByIdQuery(id));
+            var result =await Sender.Send(new GetCourseByIdQuery(id), cancellationToken);
             //Result<CourseDto> response = await courseService.GetByIdAsync(id, cancellationToken);
             if (result.IsFailure)
             {

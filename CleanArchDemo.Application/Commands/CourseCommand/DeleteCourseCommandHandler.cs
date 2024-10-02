@@ -10,12 +10,12 @@ public class DeleteCourseCommandHandler(ICourseService courseService) : ICommand
 {
     public async Task<Result<(bool Success, string Message)>> Handle(DeleteCourseCommand request, CancellationToken cancellationToken)
     {
-        var result = await courseService.DeleteAsync(request.id);
+        var result = await courseService.DeleteAsync(request.Id);
         if (result.IsFailure)
         {
             return result.AppendFailure(new(
                 "Course.FailedRemove",
-                $"The course with Id [{request.id}] can't be removed"));
+                $"The course with Id [{request.Id}] can't be removed"));
         }
         return Result<(bool Success, string Message)>.Success(result.Value);
     }

@@ -11,6 +11,18 @@
       "RelativeMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|solutionrelative:cleanarchdemo.application\\commands\\coursecommand\\deletecoursecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}|CleanArchDemo.Core\\CleanArchDemo.Core.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.core\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77EAAA88-E1FE-4CF8-8557-FAE7B45CFEF0}|CleanArchDemo.Core\\CleanArchDemo.Core.csproj|solutionrelative:cleanarchdemo.core\\interfaces\\icrudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.application\\services\\curdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|solutionrelative:cleanarchdemo.application\\services\\curdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F93E307C-9CD9-4B9A-BBE2-2DFCF8570F2F}|CleanArchDemo.Infra.Data\\CleanArchDemo.Infra.Data.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.infra.data\\university\\repository\\curdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F93E307C-9CD9-4B9A-BBE2-2DFCF8570F2F}|CleanArchDemo.Infra.Data\\CleanArchDemo.Infra.Data.csproj|solutionrelative:cleanarchdemo.infra.data\\university\\repository\\curdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.application\\commands\\coursecommand\\deletecoursecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|solutionrelative:cleanarchdemo.application\\commands\\coursecommand\\deletecoursecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.application\\commands\\coursecommand\\createcoursecommandhadler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|solutionrelative:cleanarchdemo.application\\commands\\coursecommand\\createcoursecommandhadler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.application\\services\\curdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03F304EA-B5E2-4F5B-A220-A613EFE6378C}|CleanArchDemo.Application\\CleanArchDemo.Application.csproj|solutionrelative:cleanarchdemo.application\\services\\curdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE4047AE-7423-4B55-BDA3-B2A1E82CE547}|CleanArchDemo.Api\\CleanArchDemo.Api.csproj|d:\\iti\\backend\\clean architecture\\getting started with .net core clean architecture -manish narayan\\practise-project\\cleanarch-demo\\cleanarchdemo.api\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,20 +86,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICurdService.cs",
-              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
-              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Interfaces\\ICurdService.cs*",
-              "RelativeToolTip": "CleanArchDemo.Application\\Interfaces\\ICurdService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ICrudRepository.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Interfaces\\ICrudRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Core\\Interfaces\\ICrudRepository.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Interfaces\\ICrudRepository.cs",
+              "RelativeToolTip": "CleanArchDemo.Core\\Interfaces\\ICrudRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T22:18:30.691Z",
+              "WhenOpened": "2024-10-02T22:26:15.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteCourseCommandHandler.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
+              "RelativeToolTip": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T22:16:26.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "DeleteCourseCommand.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
+              "RelativeToolTip": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T22:15:38.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurdService.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Services\\CurdService.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Services\\CurdService.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Services\\CurdService.cs",
+              "RelativeToolTip": "CleanArchDemo.Application\\Services\\CurdService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAApwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T22:17:59.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Api\\Controllers\\CourseController.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "CleanArchDemo.Api\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T19:46:07.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CurdRepository.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Data\\University\\Repository\\CurdRepository.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Infra.Data\\University\\Repository\\CurdRepository.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Data\\University\\Repository\\CurdRepository.cs",
+              "RelativeToolTip": "CleanArchDemo.Infra.Data\\University\\Repository\\CurdRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwDQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T22:25:48.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CreateCourseCommandHadler.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\CreateCourseCommandHadler.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Application\\Commands\\CourseCommand\\CreateCourseCommandHadler.cs",
@@ -104,59 +177,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeleteCourseCommandHandler.cs",
-              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
-              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs*",
-              "RelativeToolTip": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommandHandler.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABKAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ICurdService.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
+              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
+              "RelativeToolTip": "CleanArchDemo.Application\\Interfaces\\ICurdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T22:16:26.057Z",
+              "WhenOpened": "2024-10-02T22:18:30.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeleteCourseCommand.cs",
-              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
-              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs*",
-              "RelativeToolTip": "CleanArchDemo.Application\\Commands\\CourseCommand\\DeleteCourseCommand.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T22:15:38.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "CleanArchDemo.Api\\Controllers\\CourseController.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\CourseController.cs*",
-              "RelativeToolTip": "CleanArchDemo.Api\\Controllers\\CourseController.cs*",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAgwFsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T19:46:07.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CurdService.cs",
-              "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Services\\CurdService.cs",
-              "RelativeDocumentMoniker": "CleanArchDemo.Application\\Services\\CurdService.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Services\\CurdService.cs*",
-              "RelativeToolTip": "CleanArchDemo.Application\\Services\\CurdService.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAD4vw8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T22:17:59.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "GetCourseByIdQuery.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Queries\\GetCourseByIdQuery.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Application\\Queries\\GetCourseByIdQuery.cs",
@@ -169,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "StatusCode.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Shared\\StatusCode.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Core\\Shared\\StatusCode.cs",
@@ -182,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Response.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Shared\\Response.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Core\\Shared\\Response.cs",
@@ -195,12 +229,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ApiController.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\ApiController.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Api\\Controllers\\ApiController.cs",
-              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\ApiController.cs*",
-              "RelativeToolTip": "CleanArchDemo.Api\\Controllers\\ApiController.cs*",
+              "ToolTip": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Api\\Controllers\\ApiController.cs",
+              "RelativeToolTip": "CleanArchDemo.Api\\Controllers\\ApiController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T19:43:07.837Z",
@@ -208,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "GetCourseByIdQueryHandler.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Queries\\GetCourseByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Application\\Queries\\GetCourseByIdQueryHandler.cs",
@@ -227,7 +261,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "CourseService.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Application\\Services\\CourseService.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Application\\Services\\CourseService.cs",
@@ -240,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Result.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Shared\\Result.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Core\\Shared\\Result.cs",
@@ -253,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ResultT.cs",
               "DocumentMoniker": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Core\\Shared\\ResultT.cs",
               "RelativeDocumentMoniker": "CleanArchDemo.Core\\Shared\\ResultT.cs",

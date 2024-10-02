@@ -3,4 +3,4 @@
 namespace CleanArchDemo.Application.Commands.CourseCommand;
 
 public sealed record DeleteCourseCommand(
-    int id):ICommand<(bool Success, string Message)>;
+    int Id):ICommand<(bool Success, string Message)>;
