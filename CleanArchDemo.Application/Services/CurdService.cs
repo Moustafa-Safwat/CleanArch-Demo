@@ -33,7 +33,7 @@ namespace CleanArchDemo.Application.Services
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
-        public virtual async Task<(bool Success, string Message)> DeleteAsync(int id)
+        public virtual async Task<Result<(bool Success, string Message)>> DeleteAsync(int id)
         {
             return await repository.DeleteAsync(id);
         }
@@ -43,10 +43,10 @@ namespace CleanArchDemo.Application.Services
         /// </summary>
         /// <param name="id">The ID of the entity to retrieve.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains the entity with the specified ID, or null if not found.</returns>
-        public virtual async Task<TDto?> GetByIdAsync(int id,CancellationToken cancellationToken)
+        public virtual async Task<TDto?> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             // it's better to sue IQurable as return and use projectto method from the automapper to implement the deffer execuation
-            var entity =await  repository.GetByIdAsync(id,cancellationToken);
+            var entity = await repository.GetByIdAsync(id, cancellationToken);
             return entity?.MapObjects<TEntity, TDto>();
         }
 

@@ -1,6 +1,4 @@
-﻿using CleanArchDemo.Core.Entities;
-
-namespace CleanArchDemo.Application.Dtos
+﻿namespace CleanArchDemo.Application.Dtos
 {
     public record HumanDto : BaseDto
     {

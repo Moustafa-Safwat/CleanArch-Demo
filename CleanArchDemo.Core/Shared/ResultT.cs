@@ -1,4 +1,6 @@
-﻿namespace CleanArchDemo.Core.Shared;
+﻿using System.Runtime.CompilerServices;
+
+namespace CleanArchDemo.Core.Shared;
 
 public class Result<TValue>(TValue value, bool isSuccess, Error error)
     : Result(isSuccess, error)
@@ -16,4 +18,10 @@ public class Result<TValue>(TValue value, bool isSuccess, Error error)
         : Failure(Error.NullValue);
 
     public static implicit operator Result<TValue>(TValue? value) => Create(value);
+
+    public new Result<TValue> AppendFailure(Error error)
+    {
+        Error = error;
+        return this;
+    }
 }

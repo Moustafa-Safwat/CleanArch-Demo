@@ -22,9 +22,9 @@ public class CreateCourseCommandHadler(ICourseService courseService) : ICommandH
         var result = await courseService.AddAsync(courseDto, cancellationToken);
         if (result.IsFailure)
         {
-            return Result<int>.Failure(new(
+            return result.AppendFailure(new(
                 "CreateCourse.Failed",
-                 result.Error));
+                 "This Ccourse failed to be created"));
         }
         return Result<int>.Success(result.Value);
     }

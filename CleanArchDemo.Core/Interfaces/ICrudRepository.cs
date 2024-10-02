@@ -1,4 +1,5 @@
 ﻿using CleanArchDemo.Core.Entities;
+using CleanArchDemo.Core.Shared;
 
 namespace CleanArchDemo.Core.Interfaces
 {
@@ -42,7 +43,7 @@ namespace CleanArchDemo.Core.Interfaces
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
-        Task<(bool Success, string Message)> DeleteAsync(int id);
+        Task<Result<(bool Success, string Message)>> DeleteAsync(int id);
 
     }
 }

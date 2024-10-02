@@ -22,7 +22,7 @@ namespace CleanArchDemo.Application.Services
             {
                 return Result<int>.Failure(new(
                         "Department.NotFound",
-                        $"The Department with Id [{dto.Id}] which you try to assing the course to was not found"));
+                        $"The Department with Id [{dto.DepartmentId}] which you try to assing the course to was not found"));
             }
             return await base.AddAsync(dto,cancellationToken);
         }

@@ -1,5 +1,6 @@
 ﻿using CleanArchDemo.Core.Entities;
 using CleanArchDemo.Core.Interfaces;
+using CleanArchDemo.Core.Shared;
 using CleanArchDemo.Infra.Data.University.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
@@ -31,23 +32,29 @@ namespace CleanArchDemo.Infra.Data.University.Repository
         /// </summary>
         /// <param name="id">The ID of the entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was deleted successfully.</returns>
-        public async Task<(bool Success, string Message)> DeleteAsync(int id)
+        public async Task<Result<(bool Success, string Message)>> DeleteAsync(int id)
         {
             try
             {
                 var entity = await context.Set<T>().FindAsync(id);
                 if (entity == null)
                 {
-                    return (false, "The record you are trying to delete does not exist.");
+                    return Result<(bool, string)>.Failure(new(
+                        "Course.DeleteFailed",
+                        "The record you are trying to delete does not exist."));
                 }
                 context.Set<T>().Remove(entity);
                 return await context.SaveChangesAsync() > 0 ?
-                    (true, "Deleted Successfully") :
-                    (false, "Failed to Delete, No changes were made.");
+                  Result<(bool, string)>.Success((true, "Deleted Successfully")) :
+                  Result<(bool, string)>.Failure(new(
+                        "Course.DeleteFailed",
+                        "Failed to Delete, No changes were made."));
             }
             catch (DbUpdateConcurrencyException)
             {
-                return (false, "The record has been modified by another process. Please reload the data and try again.");
+                return Result<(bool, string)>.Failure(new(
+                        "Course.DeleteFailed",
+                        "The record has been modified by another process. Please reload the data and try again."));
             }
         }
 

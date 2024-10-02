@@ -1,6 +1,7 @@
 ﻿using CleanArchDemo.Application.Commands.CourseCommand;
 using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
+using CleanArchDemo.Application.Queries;
 using CleanArchDemo.Core.Shared;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,17 +31,18 @@ namespace CleanArchDemo.Api.Controllers
 
         // GET : api/course/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetCourseById(int id,CancellationToken cancellationToken)
+        public async Task<ActionResult> GetCourseById(int id, CancellationToken cancellationToken)
         {
-            Result<CourseDto> response = await courseService.GetByIdAsync(id,cancellationToken);
-            if (response.IsFailure)
+            // Implement the CQRS in this end point
+            var result =await Sender.Send(new GetCourseByIdQuery(id));
+            //Result<CourseDto> response = await courseService.GetByIdAsync(id, cancellationToken);
+            if (result.IsFailure)
             {
-                return NotFound(new Error("Course.NotFound",
-                    $"Course with Id [{id}], is not found in the database"));
+                return NotFound(result);
             }
-            return Ok(response);
+            return Ok(result);
         }
-        
+
         // POST : api/course
         [HttpPost]
         public async Task<ActionResult> Add(CourseDto courseDto, CancellationToken cancellationToken)
@@ -56,9 +58,9 @@ namespace CleanArchDemo.Api.Controllers
             {
                 return CreatedAtAction(nameof(GetCourseById),
                     new { Id = result.Value },
-                    result);
+                    Response<int>.Create(result,Core.Shared.StatusCode.Created));
             }
-            return BadRequest(result.Error);
+            return BadRequest(result);
         }
 
         // UPDATE : api/course/{id}
@@ -83,12 +85,12 @@ namespace CleanArchDemo.Api.Controllers
         [Route("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var (Success, Message) = await courseService.DeleteAsync(id);
-            if (Success)
+            var result = await Sender.Send(new DeleteCourseCommand(id));
+            if (result.IsSuccess)
             {
-                return Ok(Message);
+                return Ok(result);
             }
-            return BadRequest(Message);
+            return BadRequest(result);
         }
 
         // GET : api/course/{courseId}/students

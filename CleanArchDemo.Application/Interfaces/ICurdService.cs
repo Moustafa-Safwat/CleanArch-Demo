@@ -9,6 +9,6 @@ namespace CleanArchDemo.Application.Interfaces
         Task<(bool Success, string Message)> UpdateAsync(T entity);
         Task<T?> GetByIdAsync(int id,CancellationToken cancellationToken);
         IQueryable<T> GetPaged(int pageNumber, int pageSize);
-        Task<(bool Success, string Message)> DeleteAsync(int id);
+        Task<Result<(bool Success, string Message)>> DeleteAsync(int id);
     }
 }
