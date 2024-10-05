@@ -11,7 +11,9 @@ public class DtoAndEntitiesMapping : Profile
         CreateMap<CourseDto, Course>()
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Names))
             .ReverseMap();
-        CreateMap<Student, HumanDto>()
+        CreateMap<Student, HumanDto?>()
+            .ReverseMap();
+        CreateMap<Department, DepartmentDto?>()
             .ReverseMap();
     }
 }

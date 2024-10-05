@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanArchDemo.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66efb7ea79c613d67709299505d6608f1498034f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+836ce2cdb128663a313a797bf9a1cc117f79722e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanArchDemo.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanArchDemo.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,7 +3,6 @@ using CleanArchDemo.Core.Interfaces;
 using CleanArchDemo.Core.Shared;
 using CleanArchDemo.Infra.Data.University.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
 
 namespace CleanArchDemo.Infra.Data.University.Repository
 {

@@ -4268,7 +4268,6 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CleanArchDemo.Infra.Data >= 1.0.0",
       "CleanArchDemo.Infra.Ioc >= 1.0.0",
       "MediatR >= 12.4.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
@@ -4303,9 +4302,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Data\\CleanArchDemo.Infra.Data.csproj": {
-              "projectPath": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Data\\CleanArchDemo.Infra.Data.csproj"
-            },
             "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Ioc\\CleanArchDemo.Infra.Ioc.csproj": {
               "projectPath": "D:\\ITI\\BackEnd\\Clean Architecture\\Getting Started with .NET Core Clean Architecture -Manish Narayan\\Practise-Project\\CleanArch-Demo\\CleanArchDemo.Infra.Ioc\\CleanArchDemo.Infra.Ioc.csproj"
             }
