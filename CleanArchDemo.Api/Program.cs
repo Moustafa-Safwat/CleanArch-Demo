@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.RegisterServices(); // Register the services
+builder.Services.RegisterServices() // Register the services
+                .RegiserAutoMapper(); // Register Automapper
 
 builder.Services.AddDbContext<UniversityDbContext>(options =>
 {

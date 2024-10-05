@@ -1,7 +1,5 @@
 ﻿using CleanArchDemo.Application.Interfaces;
 using CleanArchDemo.Application.Messaging;
-using CleanArchDemo.Application.Services;
-using CleanArchDemo.Core.Interfaces;
 using CleanArchDemo.Core.Shared;
 
 namespace CleanArchDemo.Application.Commands.CourseCommand;

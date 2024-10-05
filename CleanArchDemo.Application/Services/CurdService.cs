@@ -1,9 +1,10 @@
-﻿using CleanArchDemo.Application.Dtos;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
+using CleanArchDemo.Application.Mapping;
 using CleanArchDemo.Core.Entities;
 using CleanArchDemo.Core.Interfaces;
-using System.Runtime.Serialization;
-using CleanArchDemo.Application.Mapping;
 using CleanArchDemo.Core.Shared;
 
 namespace CleanArchDemo.Application.Services
@@ -12,11 +13,16 @@ namespace CleanArchDemo.Application.Services
     /// Represents a service for performing CRUD operations on entities.
     /// </summary>
     /// <typeparam name="TDto">The type of entity.</typeparam>
-    public class CurdService<TDto, TEntity>(ICrudRepository<TEntity> repository)
+    public class CurdService<TDto, TEntity>(
+        ICrudRepository<TEntity> repository,
+        IMapper mapper
+        )
         : ICurdService<TDto>
         where TDto : BaseDto, new()
         where TEntity : BaseEntity, new()
     {
+        protected IMapper Mapper => mapper;
+
         /// <summary>
         /// Adds a new entity asynchronously.
         /// </summary>
@@ -24,7 +30,7 @@ namespace CleanArchDemo.Application.Services
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was added successfully.</returns>
         public virtual async Task<Result<int>> AddAsync(TDto dto, CancellationToken cancellationToken)
         {
-            var mappedEntity = dto.MapObjects<TDto, TEntity>();
+            var mappedEntity = mapper.Map<TDto, TEntity>(dto);
             return await repository.AddAsync(mappedEntity, cancellationToken);
         }
 
@@ -47,7 +53,7 @@ namespace CleanArchDemo.Application.Services
         {
             // it's better to sue IQurable as return and use projectto method from the automapper to implement the deffer execuation
             var entity = await repository.GetByIdAsync(id, cancellationToken);
-            return entity?.MapObjects<TEntity, TDto>();
+            return mapper.Map<TEntity, TDto>(entity!);
         }
 
         /// <summary>
@@ -59,7 +65,7 @@ namespace CleanArchDemo.Application.Services
         public virtual IQueryable<TDto> GetPaged(int pageNumber, int pageSize)
         {
             return repository.GetPaged(pageNumber, pageSize)
-                .Select(entity => entity.MapObjects<TEntity, TDto>());
+                .ProjectTo<TDto>(mapper.ConfigurationProvider);
         }
 
         /// <summary>
@@ -69,7 +75,7 @@ namespace CleanArchDemo.Application.Services
         /// <returns>A task representing the asynchronous operation. The task result contains a boolean value indicating whether the entity was updated successfully.</returns>
         public virtual async Task<(bool Success, string Message)> UpdateAsync(TDto entity)
         {
-            var mappedEntity = entity.MapObjects<TDto, TEntity>();
+            var mappedEntity = mapper.Map<TDto, TEntity>(entity);
             return await repository.UpdateAsync(mappedEntity);
         }
     }

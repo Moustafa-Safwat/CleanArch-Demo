@@ -1,4 +1,5 @@
-﻿using CleanArchDemo.Core.Shared;
+﻿using AutoMapper;
+using CleanArchDemo.Core.Shared;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -6,10 +7,14 @@ using Error = CleanArchDemo.Core.Shared.Error;
 
 namespace CleanArchDemo.Api.Controllers
 {
+    /// <summary>
+    /// Base API controller providing common response handling.
+    /// </summary>
     [ApiController]
-    public class ApiController(ISender sender) : ControllerBase
+    public class ApiController(ISender sender,IMapper mapper) : ControllerBase
     {
         protected ISender Sender => sender;
+        protected IMapper Mapper => mapper;
 
         public override OkObjectResult Ok([ActionResultObjectValue] object? value)
         {
@@ -26,7 +31,15 @@ namespace CleanArchDemo.Api.Controllers
             return HandleResult(value, base.NotFound, Core.Shared.StatusCode.NotFound);
         }
 
-        private static T HandleResult<T>(object? value, Func<object, T> baseMethod, Core.Shared.StatusCode statusCode) where T : ObjectResult
+        /// <summary>
+        /// Handles the result by wrapping it in a response object and calling the base method.
+        /// </summary>
+        /// <typeparam name="T">The type of the result.</typeparam>
+        /// <param name="value">The value to handle.</param>
+        /// <param name="baseMethod">The base method to call.</param>
+        /// <param name="statusCode">The status code to use.</param>
+        /// <returns>The result wrapped in a response object.</returns>
+        private static T HandleResult<T>(object? value, Func<object, T> baseMethod, StatusCode statusCode) where T : ObjectResult
         {
             if (value == null)
             {

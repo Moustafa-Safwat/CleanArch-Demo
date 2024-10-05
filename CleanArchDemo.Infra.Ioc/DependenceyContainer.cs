@@ -1,5 +1,6 @@
 ﻿using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
+using CleanArchDemo.Application.Mapping;
 using CleanArchDemo.Application.Services;
 using CleanArchDemo.Core.Entities;
 using CleanArchDemo.Core.Interfaces;
@@ -25,6 +26,18 @@ namespace CleanArchDemo.Infra.Ioc
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped(typeof(ICurdService<DepartmentDto>), typeof(CurdService<DepartmentDto, Department>));
             services.AddScoped<ICourseService, CourseService>();
+            return services;
+        }
+
+        /// <summary>
+        /// Registers the AutoMapper services in the dependency injection container.
+        /// </summary>
+        /// <param name="services">The service collection to register the services with.</param>
+        /// <returns>The updated service collection.</returns>
+        public static IServiceCollection RegiserAutoMapper(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(AutoMapperConfiguration));
+            AutoMapperConfiguration.RegisterMappings();
             return services;
         }
     }

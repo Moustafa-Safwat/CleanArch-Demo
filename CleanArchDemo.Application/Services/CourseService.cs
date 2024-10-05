@@ -1,4 +1,6 @@
-﻿using CleanArchDemo.Application.Dtos;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
 using CleanArchDemo.Application.Mapping;
 using CleanArchDemo.Core.Entities;
@@ -11,11 +13,15 @@ namespace CleanArchDemo.Application.Services
     /// Service for managing courses.
     /// </summary>
     /// <param name="courseRepository">The repository for course-related data operations.</param>
-    public class CourseService(ICourseRepository courseRepository, ICurdService<DepartmentDto> departmentService)
-        : CurdService<CourseDto, Course>(courseRepository),
+    public class CourseService(
+        ICourseRepository courseRepository,
+        IMapper mapper,
+        ICurdService<DepartmentDto> departmentService
+        )
+        : CurdService<CourseDto, Course>(courseRepository, mapper),
         ICourseService
     {
-        public override async Task<Result<int>> AddAsync(CourseDto dto,CancellationToken cancellationToken)
+        public override async Task<Result<int>> AddAsync(CourseDto dto, CancellationToken cancellationToken)
         {
             var result = await departmentService.GetByIdAsync(dto.DepartmentId, cancellationToken);
             if (result == null)// check if the department is exisst or not
@@ -24,7 +30,7 @@ namespace CleanArchDemo.Application.Services
                         "Department.NotFound",
                         $"The Department with Id [{dto.DepartmentId}] which you try to assing the course to was not found"));
             }
-            return await base.AddAsync(dto,cancellationToken);
+            return await base.AddAsync(dto, cancellationToken);
         }
 
         /// <summary>
@@ -34,8 +40,10 @@ namespace CleanArchDemo.Application.Services
         /// <returns>A queryable collection of <see cref="HumanDto"/> representing the students in the course.</returns>
         public IQueryable<HumanDto> GetStudentFromCourseId(int courseId)
         {
-            return courseRepository.GetStudentsFromCourseId(courseId)
-                .Select(student => student.MapObjects<Student, HumanDto>());
+            return courseRepository
+                .GetStudentsFromCourseId(courseId)
+                .ProjectTo<HumanDto>(Mapper.ConfigurationProvider);
+            //.Select(student => student.MapObjects<Student, HumanDto>());
         }
 
         /// <summary>
@@ -45,8 +53,9 @@ namespace CleanArchDemo.Application.Services
         /// <returns>A queryable collection of <see cref="HumanDto"/> representing the instructors in the course.</returns>
         public IQueryable<HumanDto> GetInstructorFromCourseId(int courseId)
         {
-            return courseRepository.GetInstructorsFromCourseId(courseId)
-                .Select(instructor => instructor.MapObjects<Instructor, HumanDto>());
+            return courseRepository
+                .GetInstructorsFromCourseId(courseId)
+                .ProjectTo<HumanDto>(Mapper.ConfigurationProvider);
         }
 
         /// <summary>
@@ -57,7 +66,7 @@ namespace CleanArchDemo.Application.Services
         public async Task<DepartmentDto?> GetDepartmentFromCourseIdAsync(int courseId)
         {
             var result = await courseRepository.GetDepartmentFromCourseIdAsyncAsync(courseId);
-            return result?.MapObjects<Department, DepartmentDto>();
+            return Mapper.Map<Department, DepartmentDto>(result!);
         }
     }
 }

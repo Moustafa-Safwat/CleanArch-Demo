@@ -1,17 +1,21 @@
-﻿using CleanArchDemo.Application.Commands.CourseCommand;
+﻿using AutoMapper;
+using CleanArchDemo.Application.Commands.CourseCommand;
 using CleanArchDemo.Application.Dtos;
 using CleanArchDemo.Application.Interfaces;
 using CleanArchDemo.Application.Queries;
 using CleanArchDemo.Core.Shared;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace CleanArchDemo.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class CourseController(ISender sender, ICourseService courseService) : ApiController(sender)
+    public class CourseController(
+        ISender sender,
+        IMapper mapper,
+        ICourseService courseService
+        )
+        : ApiController(sender, mapper)
     {
         // GET : api/course?pageNumber=1&pageSize=10
         [HttpGet]
@@ -34,7 +38,7 @@ namespace CleanArchDemo.Api.Controllers
         public async Task<ActionResult> GetCourseById(int id, CancellationToken cancellationToken)
         {
             // Implement the CQRS in this end point
-            var result =await Sender.Send(new GetCourseByIdQuery(id), cancellationToken);
+            var result = await Sender.Send(new GetCourseByIdQuery(id), cancellationToken);
             //Result<CourseDto> response = await courseService.GetByIdAsync(id, cancellationToken);
             if (result.IsFailure)
             {
@@ -47,18 +51,14 @@ namespace CleanArchDemo.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Add(CourseDto courseDto, CancellationToken cancellationToken)
         {
-            var result = await Sender.Send(new CreateCourseCommand(
-                        courseDto.Name,
-                        courseDto.Code,
-                        courseDto.Credits,
-                        courseDto.Description,
-                        courseDto.DepartmentId), cancellationToken);
+            var createCourseCommand = Mapper.Map<CourseDto, CreateCourseCommand>(courseDto);
+            var result = await Sender.Send(createCourseCommand, cancellationToken);
             //var result = await courseService.AddAsync(courseDto);
             if (result.IsSuccess)
             {
                 return CreatedAtAction(nameof(GetCourseById),
                     new { Id = result.Value },
-                    Response<int>.Create(result,Core.Shared.StatusCode.Created));
+                    Response<int>.Create(result, Core.Shared.StatusCode.Created));
             }
             return BadRequest(result);
         }
